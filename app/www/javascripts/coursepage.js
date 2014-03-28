@@ -13,7 +13,12 @@ function coursePage()
 function addToDo()
 {
 	toDo.append()
-	//
+
 	localStorage["toDo"] = toDo
+
+}
+function togglediv()
+{
+	$(".todo").toggle()
 
 }
