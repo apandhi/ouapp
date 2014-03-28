@@ -1,4 +1,4 @@
-function userLogin(endpoint)
+function userLogin(username,password,endpoint)
 {
   var data = {
      user: username,
