@@ -13,7 +13,6 @@ function coursePage()
 	}
 }
 
-<<<<<<< HEAD
 function addToDo()
 {
 	toDo.append()
@@ -25,7 +24,8 @@ function togglediv()
 {
 	$(".todo").toggle()
 
-=======
+}
+
 function addToDo(title, comment, due){
 	var data;
 	try{
