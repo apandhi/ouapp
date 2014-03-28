@@ -51,5 +51,4 @@ function getToDo(){
 		data = [];
 	}
 	return data;
->>>>>>> fe183e77e785c41c8a8e7ae49101a056a7dfc075
 }

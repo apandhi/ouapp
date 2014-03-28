@@ -6,7 +6,7 @@ function displayData($obj,data1)
   }
 
   $(".course-item").click(function(){
-    alert($(this).data('course'));
+    //alert($(this).data('course'));
     localStorage['course_data'] = JSON.stringify($(this).data('course'));
     steroids.layers.push(new steroids.views.WebView("coursepage.html"));
   })

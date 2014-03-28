@@ -52,7 +52,7 @@ function login(){
            });
        }else{
            //Not logged in
-           alert("Could Not lLog In");
+           alert("Could Not Log In");
        }
        
   });
