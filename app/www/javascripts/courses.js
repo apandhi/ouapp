@@ -12,3 +12,4 @@ function onVisibilityChange() {
         steroids.view.navigationBar.hide();
     }
 }
+
