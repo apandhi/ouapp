@@ -28,7 +28,6 @@ function login(){
               alert("Setting Session");
               $.get("https://my.hofstra.edu/cp/home/next", function(){
                 getData(function(data){
-                  data1
                 });
               })
            });
