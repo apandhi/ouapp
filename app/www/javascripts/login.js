@@ -1,5 +1,4 @@
 var courses = new steroids.views.WebView("courses.html");
-courses.preload();
 
 $(function(){
   if(localStorage['remember']){
