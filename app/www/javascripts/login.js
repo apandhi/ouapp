@@ -1,3 +1,13 @@
+var courses = new steroids.views.WebView("courses.html");
+
+$(function(){
+  if(localStorage['remember']){
+    $("#email").val(localStorage['username']);
+    $("#password").val(localStorage['password']);
+    $("#remember").prop('checked', true);
+  }
+});
+
 function userLogin(username,password,endpoint,callback)
 {
   var data = {
@@ -17,7 +27,6 @@ function userLogin(username,password,endpoint,callback)
   }); 
 }
 
-var courses = new steroids.views.WebView("courses.html");
 
 function login(){
   userLogin($("#email").val(), $("#password").val(), "https://my.hofstra.edu/cp/home/login", function(xhr, statusText) { 
@@ -25,20 +34,24 @@ function login(){
 
        if(response&&response.indexOf("Error: Failed Login") == -1){
            //Logged in
-           alert("Logged in");
            userLogin($("#email").val(), $("#password").val(), "https://my.hofstra.edu/cp/home/login", function(xhr, statusText) { 
-              alert("Setting Session");
               $.get("https://my.hofstra.edu/cp/home/next", function(){
                 getData(function(data){
                   localStorage['user_data'] = data;
+                  if($("#remember").prop('checked')){
+                    localStorage['username'] = $("#email").val();
+                    localStorage['password'] = $("#password").val();
+                    localStorage['remember'] = true;
+                  }else{
+                    localStorage['remember'] = false;
+                  }
                   steroids.layers.push(courses);
                 });
               });
            });
        }else{
            //Not logged in
-           alert("Failed");
-          
+           alert("Could Not lLog In");
        }
        
   });
@@ -57,13 +70,4 @@ function getData(callback){
        
      } 
   }); 
-}
-function displayData($obj,data1)
-{
-  for(var x =0;x<data1.courses.length;x++)
-  {
-    $obj.append("<li class='list-group-item'>");
-    $obj.append(data1.courses[x].title)
-    $obj.append("</li>");
-  }
 }
