@@ -13,7 +13,6 @@ function coursePage()
 	}
 }
 
-<<<<<<< HEAD
 function addToDo()
 {
 	toDo.append()
@@ -25,7 +24,8 @@ function togglediv()
 {
 	$(".todo").toggle()
 
-=======
+}
+
 function addToDo(title, comment, due){
 	var data;
 	try{
@@ -51,5 +51,4 @@ function getToDo(){
 		data = [];
 	}
 	return data;
->>>>>>> fe183e77e785c41c8a8e7ae49101a056a7dfc075
 }
