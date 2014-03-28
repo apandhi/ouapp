@@ -25,16 +25,16 @@
           <img src="images/hofstra.jpg" class="">
           <h1 class = "course-title"></h1>
           <ul class="list-group courses-list">
-            
-
-            <div class = todo>
-              Title<input type ="text"> </input>
-              Details<input type = "textarea"></input>
-              Due:<input type = "text"></input>
-
-
-            </div>
-            <button class="btn" onclick = togglediv()>Middle</button>
+          </ul>
+          <h2 class ="todos">To-Do</h2>
+          <button class="btn btn-block btn-info" onclick = "togglediv()" style="margin-bottom:10px;">Add New</button>
+          <div class="form-group todo" style="display:none;" >
+            <input type="text" id="title" class="form-control" placeholder="Assignment Title">
+            <textarea id="comments" class="form-control" placeholder="Details"></textarea>
+            <input type="text" id="due" class="form-control" placeholder="Due">
+            <button class="btn btn-block btn-primary" onclick="saveToDo();">Save</button>
+          </div>
+          <ul class="list-group todo-list">
           </ul>
         </div>
       </div>

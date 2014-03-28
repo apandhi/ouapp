@@ -11,6 +11,11 @@ function coursePage()
 		$(".courses-list").append('<li class="list-group-item" style ="text-align:center">' + dx.coursemeetinfo[i].location+ "</li>")
 
 	}
+
+	var todos = getToDo();
+	for(var i = 0; i < todos.length; i++){
+		renderToDo(todos[i].title, todos[i].comment, todos[i].due);
+	}
 }
 
 function addToDo()
@@ -24,6 +29,17 @@ function togglediv()
 {
 	$(".todo").toggle()
 
+}
+
+function renderToDo(title, comment, due){
+	if(due == ""){
+		due = "Unknown";
+	}
+	$(".todo-list").append("<li class='list-group-item'><strong>" + title + "</strong><br>" + comment + "<br>Due: " + due + "</li>");
+}
+
+function saveToDo(){
+	addToDo($("#title").val(), $("#comments").val(), $("#due").val());
 }
 
 function addToDo(title, comment, due){
@@ -40,6 +56,8 @@ function addToDo(title, comment, due){
 		"due": due
 	});
 	localStorage[courseName] = JSON.stringify(data);
+	renderToDo(title, comment, due);
+	togglediv();
 	return data;
 }
 
