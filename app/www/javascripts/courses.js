@@ -12,8 +12,18 @@ function displayData($obj,data1)
   })
 }
 
+<<<<<<< HEAD
 $(function(){
     $(".courses-list").html("");
     displayData($(".courses-list"),JSON.parse(localStorage["user_data"]))
     steroids.view.navigationBar.hide();
 })
+=======
+function onVisibilityChange() {
+    if(!document.hidden){
+        displayData($(".courses-list"),JSON.parse(localStorage["user_data"]))
+        steroids.view.navigationBar.hide();
+    }
+}
+
+>>>>>>> FETCH_HEAD
