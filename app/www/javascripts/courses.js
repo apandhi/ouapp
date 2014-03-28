@@ -7,23 +7,13 @@ function displayData($obj,data1)
 
   $(".course-item").click(function(){
     alert($(this).data('course'));
-    localStorage['course_data'] = $(this).data('course');
-    steroids.view.layers.push(new steroids.views.WebView("coursepage.html"));
+    localStorage['course_data'] = JSON.stringify($(this).data('course'));
+    steroids.layers.push(new steroids.views.WebView("coursepage.html"));
   })
 }
 
-<<<<<<< HEAD
 $(function(){
     $(".courses-list").html("");
     displayData($(".courses-list"),JSON.parse(localStorage["user_data"]))
     steroids.view.navigationBar.hide();
 })
-=======
-function onVisibilityChange() {
-    if(!document.hidden){
-        displayData($(".courses-list"),JSON.parse(localStorage["user_data"]))
-        steroids.view.navigationBar.hide();
-    }
-}
-
->>>>>>> FETCH_HEAD
