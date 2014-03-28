@@ -1,4 +1,5 @@
 var courses = new steroids.views.WebView("courses.html");
+courses.preload();
 
 $(function(){
   if(localStorage['remember']){
@@ -45,6 +46,7 @@ function login(){
                   }else{
                     localStorage['remember'] = false;
                   }
+                  steroids.view.navigationBar.hide();
                   steroids.layers.push(courses);
                 });
               });
