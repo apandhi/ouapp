@@ -30,11 +30,8 @@ function login(){
               alert("Setting Session");
               $.get("https://my.hofstra.edu/cp/home/next", function(){
                 getData(function(data){
-<<<<<<< HEAD
-=======
                   localStorage['user_data'] = data;
                   steroids.layers.push(courses);
->>>>>>> 3d6c04dfc43b60fcc3f3cffc7acf93e1b4b78f47
                 });
               });
            });
