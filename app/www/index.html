@@ -11,6 +11,7 @@
     rel="stylesheet">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/login.js"></script>
   </head>
   
   <body>
@@ -29,7 +30,7 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Student ID</label>
               <input class="form-control" id="exampleInputEmail1" placeholder="Enter ID"
-              type="email">
+              type="email" >
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
@@ -37,7 +38,7 @@
               type="password">
             </div>
           </div>
-            <button type="submit" class="btn btn-block btn-info btn-hg">Login</button>
+            <a class="btn btn-block btn-info btn-hg" onclick = 'userLogin("username","password","https://my.hofstra.edu/cp/home/login?_dc=1395968951166")'>Login</a>
           </form>
         </div>
       </div>

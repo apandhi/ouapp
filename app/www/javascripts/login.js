@@ -1,3 +1,5 @@
+function userLogin(username,password,endpoint)
+{
 var data = {
    user: username,
    pass: password,
@@ -10,7 +12,8 @@ $.ajax({
    type: "POST",
    complete: function(xhr, statusText) { 
      var response = xhr.responseText;
-     if(response.indexOf("Error: Failed Login") == -1){
+
+     if(response&&response.indexOf("Error: Failed Login") == -1){
          //Logged in
          alert("Logged in");
      }else{
@@ -20,3 +23,4 @@ $.ajax({
      
    } 
 }); 
+}
