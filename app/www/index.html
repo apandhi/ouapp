@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf8">
-  <meta name="viewport" content="width=device-width">
-  <title>Hofstra Portal</title>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+    rel="stylesheet">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="https://my.hofstra.edu/images/login/portal_header.gif" class="img-responsive">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row"></div>
+              <div class="row"></div>
+              <div class="row"></div>
+            </div>
+          </div>
+          <form role="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Student ID</label>
+              <input class="form-control" id="exampleInputEmail1" placeholder="Enter ID"
+              type="email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input class="form-control" id="exampleInputPassword1" placeholder="Enter Password"
+              type="password">
+            </div>
+            <button type="submit" class="btn btn-info">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 
-  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <script src="/javascripts/onerror.js"></script>
-  <script src="/javascripts/console.log.js"></script>
-
-  <!-- cordova.js is served from localhost to ensure the correct version -->
-  <script src="http://localhost/cordova.js"></script>
-  <script src="/components/steroids-js/steroids.js"></script>
-
-  <script src="/javascripts/application.js"></script>
-</head>
-<body>
-  <div class="container">
-
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-    </div> <!-- /container -->
-
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-1.11.0.js"><script>
-
-  </div>
-</body>
 </html>
