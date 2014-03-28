@@ -27,7 +27,9 @@ function login(){
            userLogin($("#email").val(), $("#password").val(), "https://my.hofstra.edu/cp/home/login", function(xhr, statusText) { 
               alert("Setting Session");
               $.get("https://my.hofstra.edu/cp/home/next", function(){
-                getData();
+                getData(function(data){
+                  data1
+                });
               })
            });
        }else{
@@ -40,7 +42,7 @@ function login(){
   });
 }
 
-function getData(){
+function getData(callback){
   $.ajax({
      url: "https://my.hofstra.edu/applications/mobile/courses/getdata.jsp?_dc=" + Date.now(), 
      type: "GET",
@@ -49,8 +51,17 @@ function getData(){
      },
      complete: function(xhr, statusText) { 
        var response = xhr.responseText;
-       console.log(response);
+       callback(response);
        
      } 
   }); 
+}
+function displayData($obj,data1)
+{
+  for(var x =0;x<data1.courses.length;x++)
+  {
+    $obj.append("<li class="list-group-item">")
+    $obj.append(data1.courses[x].title)
+    $obj.append(</li>)
+  }
 }
