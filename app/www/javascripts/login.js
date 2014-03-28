@@ -1,4 +1,4 @@
-function userLogin(username,password,endpoint)
+function userLogin(username,password,endpoint,callback)
 {
   var data = {
      user: username,
@@ -10,21 +10,47 @@ function userLogin(username,password,endpoint)
      url: endpoint, 
      data: data,
      type: "POST",
-     complete: function(xhr, statusText) { 
+     xhrFields: {
+        withCredentials: true
+     },
+     complete: callback
+  }); 
+}
+
+function login(){
+  userLogin($("#email").val(), $("#password").val(), "https://my.hofstra.edu/cp/home/login", function(xhr, statusText) { 
        var response = xhr.responseText;
 
        if(response&&response.indexOf("Error: Failed Login") == -1){
            //Logged in
            alert("Logged in");
+           userLogin($("#email").val(), $("#password").val(), "https://my.hofstra.edu/cp/home/login", function(xhr, statusText) { 
+              alert("Setting Session");
+              $.get("https://my.hofstra.edu/cp/home/next", function(){
+                getData();
+              })
+           });
        }else{
            //Not logged in
            alert("Failed");
+          
        }
        
      } 
-  }); 
+  });
 }
 
-function login(){
-  userLogin($("#email").val(), $("#password").val(), "https://my.hofstra.edu/cp/home/login?_dc=1395968951166")
+function getData(){
+  $.ajax({
+     url: "https://my.hofstra.edu/applications/mobile/courses/getdata.jsp?_dc=" + Date.now(), 
+     type: "GET",
+     xhrFields: {
+        withCredentials: true
+     },
+     complete: function(xhr, statusText) { 
+       var response = xhr.responseText;
+       console.log(response);
+       
+     } 
+  }); 
 }
