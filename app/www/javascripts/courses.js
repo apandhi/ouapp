@@ -2,7 +2,14 @@ function displayData($obj,data1)
 {
   for(var x =0;x<data1.courses.length;x++)
   {
-    $obj.append('<li class="list-group-item course-item" data-course=\'' + JSON.stringify(data1.courses[x]) + '\'style="text-align:left"><span class="badge">0</span>' + data1.courses[x].title + "</li>");
+    var courseName = data1.courses[x].name.replace(" ", "");
+    var data;
+    try{
+      data = JSON.parse(localStorage[courseName]);
+    }catch(e){
+      data = [];
+    }
+    $obj.append('<li class="list-group-item course-item" data-course=\'' + JSON.stringify(data1.courses[x]) + '\'style="text-align:left"><span class="badge">' + data.length + '</span>' + data1.courses[x].title + "</li>");
   }
 
   $(".course-item").click(function(){
