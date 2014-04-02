@@ -21,8 +21,7 @@ function getDutchDebits(callback){
 
 			$.post("https://hofcardweb.hofstra.edu/1card/scripts/OneWeb67.exe", toSend, function(res){
 				try{
-					console.log(res);
-					var amount = $(res).find("#oneweb_balance_information_td_amount").html().trim();
+					var amount = $(res).find("#oneweb_balance_information_td_amount").last().find("b5").html().split("$")[1].trim();
 					callback(amount);
 				}catch(e){
 					alert("Something went wrong");
