@@ -26,7 +26,7 @@ $(function(){
 })
 
 var debits = new steroids.views.WebView("debits.html");
-//debits.preload();
+debits.preload();
 
 function showDebits(){
     steroids.layers.push(debits);
