@@ -24,3 +24,10 @@ $(function(){
     displayData($(".courses-list"),JSON.parse(localStorage["user_data"]))
     steroids.view.navigationBar.hide();
 })
+
+var debits = new steroids.views.WebView("debits.html");
+debits.preload();
+
+function showDebits(){
+    steroids.layers.push(debits);
+}

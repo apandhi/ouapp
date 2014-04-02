@@ -15,22 +15,22 @@
     <script src="cordova.js"></script>
     <script src="components/steroids-js/steroids.js"></script>
 
-    <script src="javascripts/application.js"></script>
+    <script src="javascripts/debits.js"></script>
   </head>
   
   <body>
     <div class="container" style = "margin-top:50px">
       <div class="row">
         <div class="col-md-12 text-center">
-          <img src="images/hofstra.jpg" class="">
-          <h1>My Courses</h1>
-          <ul class="list-group courses-list">
-            <div class = "todo">
-              
-            </div>
-
-            
-          </ul>
+          <img src="images/hofstra.jpg" class="">     
+          <div class="well" style="
+              background-color: #2ecc71;
+              color: white;
+              font-size: 20px;
+              text-align: center;
+          "><span id="amount">Loading</span><p style="
+              font-size: 15px;
+          ">Current Balance</p></div>     
         </div>
       </div>
        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -48,7 +48,6 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#about">Courses</a></li>
             <li><a href="#contact">Email</a></li>
-            <li><a href="#debits" onClick="showDebits()">Dutch Debits</a></li>
         </div>
       <div class="row">
         <div class="col-md-12">

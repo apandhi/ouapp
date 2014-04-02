@@ -37,16 +37,21 @@ function login(){
            userLogin($("#email").val(), $("#password").val(), "https://my.hofstra.edu/cp/home/login", function(xhr, statusText) { 
               $.get("https://my.hofstra.edu/cp/home/next", function(){
                 getData(function(data){
-                  localStorage['user_data'] = data;
-                  if($("#remember").prop('checked')){
-                    localStorage['username'] = $("#email").val();
-                    localStorage['password'] = $("#password").val();
-                    localStorage['remember'] = true;
-                  }else{
-                    localStorage['remember'] = false;
-                  }
-                  steroids.view.navigationBar.hide();
-                  steroids.layers.push(courses);
+                  //Pass along the cookies to hofstra online
+                  $.get("https://my.hofstra.edu/cp/ip/login?sys=sct&url=https://hofstraonline.hofstra.edu/pls/HPRO/twbksite.P_DispSiteMap?menu_name_in=bmenu.P_MainMnu", function(){
+                    $.get("https://hofstraonline.hofstra.edu/pls/HPRO/twbksite.P_DispSiteMap?menu_name_in=bmenu.P_MainMnu", function(){
+                      localStorage['user_data'] = data;
+                      if($("#remember").prop('checked')){
+                        localStorage['username'] = $("#email").val();
+                        localStorage['password'] = $("#password").val();
+                        localStorage['remember'] = true;
+                      }else{
+                        localStorage['remember'] = false;
+                      }
+                      steroids.view.navigationBar.hide();
+                      steroids.layers.push(courses);
+                    })
+                  })
                 });
               });
            });
