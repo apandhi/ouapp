@@ -1,3 +1,5 @@
+steroids.view.navigationBar.hide({ animated: true });
+
 function getDutchDebits(callback){
 
     $.get("https://hofstraonline.hofstra.edu/pls/HPRO/hzskwebe.P_Webebill", function(data) { 
