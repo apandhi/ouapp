@@ -40,3 +40,17 @@ $(function(){
 		$("#amount").html("$" + amount);
 	});
 })
+var courses = new steroids.views.WebView("courses.html");
+	courses.preload();
+
+function showCourses()
+{
+	
+	steroids.layers.push(courses);
+
+}
+
+function showHome()
+{
+	steroids.layers.push(new steroids.views.WebView("courses.html"));
+}
