@@ -1,5 +1,3 @@
-steroids.view.navigationBar.hide({ animated: true });
-
 function getDutchDebits(callback){
 
     $.get("https://hofstraonline.hofstra.edu/pls/HPRO/hzskwebe.P_Webebill", function(data) { 
@@ -34,6 +32,18 @@ function getDutchDebits(callback){
     	}
     })
 }
+
+document.addEventListener("visibilitychange", onVisibilityChange, false);
+
+function onVisibilityChange() {
+  setTimeout(function(){
+    if(document.visibilityState == "visible"){
+      steroids.view.navigationBar.show("Dutch Debits");
+    }
+  }, 50)
+}
+
+
 
 $(function(){
 	getDutchDebits(function(amount){

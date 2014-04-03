@@ -22,7 +22,6 @@ function displayData($obj,data1)
 $(function(){
     $(".courses-list").html("");
     displayData($(".courses-list"),JSON.parse(localStorage["user_data"]))
-    steroids.view.navigationBar.hide();
 })
 
 var debits = new steroids.views.WebView("mealpoints.html");
@@ -31,3 +30,20 @@ debits.preload();
 function showDebits(){
     steroids.layers.push(debits);
 }
+<<<<<<< HEAD
+=======
+
+document.addEventListener("visibilitychange", onVisibilityChange, false);
+
+function onVisibilityChange() {
+  setTimeout(function(){
+    if(document.visibilityState == "visible"){
+      steroids.view.navigationBar.hide();
+    }
+  }, 50)
+}
+
+steroids.on('ready', function(){
+  onVisibilityChange();
+});
+>>>>>>> 15614cb348ef9f09460bea517f82ff32c97383ed
