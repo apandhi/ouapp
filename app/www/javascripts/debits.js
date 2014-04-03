@@ -64,3 +64,8 @@ function showHome()
 {
 	steroids.layers.push(new steroids.views.WebView("courses.html"));
 }
+function doEmail()
+{
+	var emURL = "https://my.hofstra.edu/applications/google/index.jsp?gservice=stugmail"
+	steroids.openURL(emURL)
+}
