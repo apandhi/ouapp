@@ -51,7 +51,6 @@ $(function(){
 	});
 })
 
-
 function showHome()
 {
 	steroids.layers.pop();
