@@ -40,7 +40,7 @@ function onVisibilityChange() {
     if(document.visibilityState == "visible"){
       steroids.view.navigationBar.show("Dutch Debits");
     }
-  }, 50)
+  }, 500)
 }
 
 
@@ -50,3 +50,15 @@ $(function(){
 		$("#amount").html("$" + amount);
 	});
 })
+
+
+function showHome()
+{
+	steroids.layers.pop();
+}
+
+function doEmail()
+{
+	var emURL = "https://my.hofstra.edu/applications/google/index.jsp?gservice=stugmail"
+	steroids.openURL(emURL)
+}
