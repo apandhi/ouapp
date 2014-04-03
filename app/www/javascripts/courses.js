@@ -25,7 +25,7 @@ $(function(){
     steroids.view.navigationBar.hide();
 })
 
-var debits = new steroids.views.WebView("debits.html");
+var debits = new steroids.views.WebView("mealpoints.html");
 debits.preload();
 
 function showDebits(){
